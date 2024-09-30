@@ -5,17 +5,46 @@
     padding: 10px;
 }
 
+.homeScreen p{
+    color: #4ce72d;
+    font-size: 14px;
+    animation: loadAll 2s ease forwards;
+}
+
+.start-screen{
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background-color: #1D1D1D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.start-screen p{
+    font-size: 16px;
+    color: #4ce72d;
+    animation: blink 2s infinite;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .ascii-art{
-    font-family: monospace;
-    font-size: 12px;
+    white-space: pre;
+    width: auto;
+    font-size: 8px;
     text-align: left;
     color: #4ce72d;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Courier New', Courier, monospace;
+    background-color: #1D1D1D ;
+    font-family: 'Courier New', Courier, monospace
 }
 
 .navbar {
@@ -26,6 +55,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     height: 10%;
+    animation: loadAll 2s ease forwards;
 }
   
 .navbar ul {
@@ -33,6 +63,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    justify-content: center;
 }
 
 .navbar li {
@@ -57,11 +88,34 @@ body {
     margin-right: auto;
     padding: 20px;
     border: 2px solid transparent; /* Starting border */
-    animation: drawBorder 3s ease forwards; /* Duration and easing */
-    height: 85%;
+    animation: drawBorder 2s ease forwards; /* Duration and easing */
+    height: 75%;
     width: 85%;
 }
 
+@keyframes blink {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes loadAll{
+    0% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 @keyframes drawBorder {
     0% {
       border-top-width: 0;
@@ -71,16 +125,21 @@ body {
       border-color: transparent;
     }
     25% {
+      border-right-width: 0;
+      border-bottom-width: 0;
+      border-left-width: 0;
       border-top-width: 2px;
     }
     50% {
       border-right-width: 2px;
+      border-bottom-width: 0;
+      border-left-width: 2px;
     }
     75% {
       border-bottom-width: 2px;
     }
+    
     100% {
-      border-left-width: 2px;
-      border-color: #4ce72d;
+        border-color: #4ce72d;
     }
   }
