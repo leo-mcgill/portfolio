@@ -1,31 +1,19 @@
 import React from "react";
-import "../App.css"
-import {SidebarData} from './SiderbarData'
+import "../App.css";
 import LogoDevIcon from '@mui/icons-material/LogoDev';
+import { Outlet, Link} from "react-router-dom";
 
 function Sidebar(){
     return (
-        <div className="Sidebar">
-            <div className="SidebarHeader">
-                <h2 className="row">Leo McGill</h2>
-                <LogoDevIcon className="icon"/>
-            </div>
-            <ul className="SidebarList">
-                {SidebarData.map((val, key) => {
-                    return (
-                    <li 
-                        key={key} 
-                        className="row"
-                        onClick={() => {
-                            window.location.pathname=val.link
-                            }}>
-                        {" "}
-                        <div>{val.title}{val.icon}</div>
-                    </li>
-                    );
-                })}
+        <>
+        <nav className="navbar">
+            <ul>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/projects">Projects</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
             </ul>
-        </div>
+        </nav>`
+        </>
         );
     }
 

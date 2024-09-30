@@ -1,12 +1,25 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import "./App.css";
-import Sidebar from "./Components/Sidebar";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
+import Sidebar from "./Components/Sidebar"
 
-function App() {
-    return (
-    <div className="App">
+export default function App(){
+  return (
+  <>
+  <Router>
+      <div className='App'>
         <Sidebar />
-    </div>
-    );
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
+    </Router>
+  </>
+  );
 }
-
-export default App;
