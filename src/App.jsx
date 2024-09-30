@@ -12,12 +12,14 @@ export default function App(){
   <>
   <Router>
       <div className='App'>
+        <div className='terminal-screen'>
         <Sidebar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        </div>
       </div>
     </Router>
   </>

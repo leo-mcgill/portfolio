@@ -1,11 +1,10 @@
 import React from 'react'
-import { useAsciiText, modular } from 'react-ascii-text';
+import { useAsciiText, ansiShadow } from 'react-ascii-text';
 
 function MyComponent() {
     const asciiTextRef = useAsciiText({
-        font: modular,
+        font: ansiShadow,
         text: "Leo McGill",
-        isAnimated: false,
     });
 
     return <pre className='ascii-art' ref={asciiTextRef}></pre>;
@@ -14,7 +13,7 @@ function MyComponent() {
 function Home(){
     return (
     <>
-    <div className='terminal-screen'>
+    <div>
     <MyComponent />
     </div>
     </>

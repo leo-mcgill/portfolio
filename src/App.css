@@ -22,10 +22,10 @@ body {
     align-content: center;
     background-color: #1D1D1D;
     overflow: hidden;
-    border: 1px, solid, #4ce72d;
     width: 75vw;
     margin-left: auto;
     margin-right: auto;
+    height: 10%;
 }
   
 .navbar ul {
@@ -53,10 +53,34 @@ body {
 }
 
 .terminal-screen {
-    width: 85%;
-    height: 100%; 
     margin-left: auto;
     margin-right: auto;
-    display: flex;
-    justify-content: center;
+    padding: 20px;
+    border: 2px solid transparent; /* Starting border */
+    animation: drawBorder 3s ease forwards; /* Duration and easing */
+    height: 85%;
+    width: 85%;
 }
+
+@keyframes drawBorder {
+    0% {
+      border-top-width: 0;
+      border-right-width: 0;
+      border-bottom-width: 0;
+      border-left-width: 0;
+      border-color: transparent;
+    }
+    25% {
+      border-top-width: 2px;
+    }
+    50% {
+      border-right-width: 2px;
+    }
+    75% {
+      border-bottom-width: 2px;
+    }
+    100% {
+      border-left-width: 2px;
+      border-color: #4ce72d;
+    }
+  }
