@@ -1,19 +1,117 @@
 .App {
     height: 100vh;
     width: 100vw;
-    padding: 10px;
     cursor: pointer;
     background: repeating-conic-gradient(#1a1a1a 0% 25%, transparent 0% 50%)
         50% / 50px 50px;
 }
 
 body {
+    height: 100vh;
+    width: 100vw;
     margin: 0;
-    padding: 0;
     background-color: #0f0f0f ;
     font-family: 'Courier New', Courier, monospace;
+    overflow:hidden;
 }
 
+.main-text-container{
+    display: flex;
+    gap: 25px;
+    flex-direction: row;
+    height: fit-content;
+    width: fit-content;
+    padding:10px;
+    margin-left: 20px;
+}
+.main-text-container p{
+    font-size: 20px;
+    font-weight: 550;
+    color: #e5e5e5;
+    overflow: hidden;
+    border-right: .15em solid #e5e5e5;
+    white-space: nowrap;
+    padding-left: 15px;
+    letter-spacing: .15em;
+    animation:
+        typing 1s steps(20, end),
+        blink-caret 1s step-end infinite;
+}
+
+.project-container {
+    position:fixed;
+    top:70px;
+    overflow-y: auto;
+    height: 76%;
+    width: calc(80% - 2*25px);
+    scrollbar-color: #3d3b3b #FFFFFF;
+    padding: 25px;
+}
+
+.project-content-container {
+    margin-top: 40px;
+    padding-left: 10px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10%;
+    height: auto;
+    width: 100%;
+    animation: slide-up 1s ease forwards;
+}
+
+.project-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:auto;
+    width: 250px;
+    max-width: 250px;
+}
+.project-icon{
+    color: #efefef;
+    border: 3px solid #efefef;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0px 0px 5px #FFFFFF;
+    padding:15%;
+}
+
+.project-info{
+    margin-top: 5%;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
+    width: 70%;
+}
+.project-info h1{
+    text-align: left;
+    font-size: 25px;
+    height: 20%;
+    margin: 0;
+    color: #efefef;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+.project-info p{
+    text-align: left;
+    font-size: 12px;
+    color: #efefef;
+}
+
+
+.home-container{
+    position:fixed;
+    top:70px;
+    height: 85%;
+    width: 80%;
+}
+.contact-container{
+    position:fixed;
+    top:70px;
+    height: 85%;
+    width: 80%;
+}
 
 .art{
     color: #e5e5e5;
@@ -24,41 +122,23 @@ body {
     white-space-collapse: preserve;
     text-shadow: 0px 0px 5px #FFFFFF;
 }
-.main-text-container{
-    display: flex;
-    gap: 25px;
-    flex-direction: row;
-    height: fit-content;
-    width: fit-content;
-    padding:10px;
-    margin-left: 20px;
-    animation: loadAll 0.5s ease forwards;
-}
-.main-text-container p{
-    font-size: 20px;
-    font-weight: 550;
-    color: #e5e5e5;
-    overflow: hidden;
-    border-right: .15em solid #e5e5e5;
-    white-space: nowrap;
-    margin: 0 auto;
-    letter-spacing: .15em;
-    animation:
-        typing 1s steps(40, end),
-        blink-caret 1s step-end infinite;
-}
+
+
 .bg-div{
     height: 100%;
     width: 100%;
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: repeating-conic-gradient(#000000 0% 25%, transparent 0% 50%)
         50% / 20px 20px;
 }
 
 .start-screen{
+    margin-top: 10px;
     height: 100%;
     width: 100%;
-    margin: auto;
     background: repeating-conic-gradient(#000000 0% 25%, transparent 0% 50%)
         50% / 20px 20px;
     display: flex;
@@ -70,13 +150,13 @@ body {
 .start-screen p{
     font-size: 16px;
     color: #e5e5e5;
-    animation: blink 2s infinite;
+    animation: blink 1s infinite;
     margin-left: auto;
     margin-right: auto;
 }
 
 .hide-text{
-    animation: loadAll 3s ease forwards;
+    animation: loadAll 3.3s ease forwards;
 }
 
 .ascii-art{
@@ -92,11 +172,12 @@ body {
 
 
 .navbar {
+    position:fixed;
     display: flex;
     flex-direction: row;
     align-items: center;
     overflow: hidden;
-    width: 100%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     height: 7%;
@@ -140,14 +221,14 @@ body {
 .navbar li a:hover {
     background-color: #fbfbfb;
     color: black;
+    border-radius: 2px 2px 2px 2px;
 }
 
 .terminal-screen {
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0;
+    position: absolute;
+    top: 20px;
     border: 1px solid #e5e5e5; /* Starting border */
-    animation: loadAll 0.5s ease forwards; /* Duration and easing */
+    animation: slide-up 2s ease forwards; /* Duration and easing */
     height: 95%;
     width: 80%;
     border-radius: 5px 5px 5px 5px;
@@ -211,4 +292,20 @@ body {
   @keyframes blink-caret{
     from,to {border-color: transparent}
     50% { border-color: #e5e5e5;}
+  }
+
+  @keyframes slide-up{
+    from{
+        opacity: 0.2;
+        height: 0;
+    }
+    to{
+        opacity:1;
+        height: 92%;
+    }
+  }
+
+  @keyframes slide-down{
+    from{}
+    to{margin-top:100%}
   }

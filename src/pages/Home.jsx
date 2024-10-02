@@ -4,9 +4,9 @@ import React from 'react'
 function Home(){
     return (
     <>
-    <div className='homeScreen'>
+    <div className='home-container'>
         <div className='main-text-container'>
-        <p>HOME</p>
+            <p>HOME</p>
         </div>
     </div>
     </>

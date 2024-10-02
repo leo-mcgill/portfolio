@@ -1,7 +1,6 @@
 import React from "react";
 import "../App.css";
-import LogoDevIcon from '@mui/icons-material/LogoDev';
-import { Outlet, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 function Sidebar(){
     return (
@@ -15,7 +14,7 @@ function Sidebar(){
                 <li><Link to="/projects">Projects</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
             </ul>
-        </nav>`
+        </nav>
         </>
         );
     }

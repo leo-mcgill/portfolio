@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from "./pages/Home";
@@ -44,7 +43,7 @@ export default function App(){
         <div className='App'>
             {startScreen ? (
             <div className="start-screen">
-              <AsciiArt />
+              <AsciiArt/>
               <div className="hide-text">
                 <p>start &lt;Enter&gt;</p>
               </div>
