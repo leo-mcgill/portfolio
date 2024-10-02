@@ -4,9 +4,9 @@ function Contact(){
     return (
     <>
     <div>
-        <h1>
-            Contact page
-        </h1>
+        <div className="main-text-container">
+            <p>Contact Page</p>
+        </div>
     </div>
     </>
     );

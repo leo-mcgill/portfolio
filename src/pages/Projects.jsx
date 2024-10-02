@@ -4,7 +4,9 @@ function Projects(){
     return (
     <>
     <div>
-        <h1>Projects</h1>
+        <div className="main-text-container">
+            <p>Projects Page</p>
+        </div>
     </div>
     </>
     );

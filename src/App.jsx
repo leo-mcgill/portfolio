@@ -11,19 +11,13 @@ import { useAsciiText, ansiShadow } from 'react-ascii-text';
 function AsciiArt() {
     const asciiTextRef = useAsciiText({
         font: ansiShadow,
-        text: "L-E-O",
+        text: "Leo McGill",
+        animationLoop: false,
+        fadeInOnly: true,
+        animationSpeed: 35,
     });
 
-    return <pre className='ascii-art'>
-{`
-██╗                 ███████╗     ██████╗              ███╗          ███╗ ██████╗ ██████╗ ██╗██╗            ██╗     
-██║                 ██╔════╝   ██╔═══██╗          ████╗   ████║ ██╔═══╝ ██╔═══╝ ██║██║            ██║
-██║                 █████╗         ██║          ██║          ██╔████╔██║ ██║              ██║███╗ ██║██║            ██║     
-██║                 ██╔══╝         ██║          ██║          ██║╚██╔╝██║ ██║              ██║   ██║ ██║██║            ██║     
-███████╗ ███████╗  ╚██████╔╝           ██║  ╚═╝    ██║ ██████╗ ██████╝ ██║█████╗  ██████╗
-╚══════╝ ╚══════╝    ╚═════╝              ╚═╝                ╚═╝ ╚═════╝ ╚═════╝ ╚═╝╚════╝   ╚═════╝
-`}
-    </pre>
+    return <pre className='ascii-art' ref={asciiTextRef}></pre>
 }
 
 export default function App(){
@@ -50,17 +44,21 @@ export default function App(){
         <div className='App'>
             {startScreen ? (
             <div className="start-screen">
-            <AsciiArt />
-            <p>start &lt;Enter&gt;</p>
+              <AsciiArt />
+              <div className="hide-text">
+                <p>start &lt;Enter&gt;</p>
+              </div>
             </div>
-        ) : (        
+        ) : (
+          <div className='bg-div'>        
             <div className='terminal-screen'>
-            <Sidebar />
-            <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
-            </Routes>
+              <Sidebar />
+              <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/contact" element={<Contact />} />
+              </Routes>
+              </div>
             </div>
             )}
         </div>

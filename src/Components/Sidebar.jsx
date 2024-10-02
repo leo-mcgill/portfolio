@@ -7,6 +7,9 @@ function Sidebar(){
     return (
         <>
         <nav className="navbar">
+            <span className="dot"></span>
+            <span className="dot"></span>
+            <span className="dot"></span>
             <ul>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/projects">Projects</Link></li>

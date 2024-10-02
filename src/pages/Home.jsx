@@ -5,7 +5,9 @@ function Home(){
     return (
     <>
     <div className='homeScreen'>
-        <p> This is home page </p>
+        <div className='main-text-container'>
+        <p>HOME</p>
+        </div>
     </div>
     </>
     );
